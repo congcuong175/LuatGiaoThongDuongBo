@@ -28,7 +28,8 @@
                 />
         </LinearLayout>
         <LinearLayout
-
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
             android:layout_width="match_parent"
             android:weightSum="2"
             android:orientation="vertical"
@@ -40,14 +41,20 @@
                 android:weightSum="3"
                 android:layout_height="match_parent">
                 <LinearLayout
+                    android:background="@color/white"
                     android:layout_marginRight="2dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:orientation="vertical"
                     android:layout_weight="1">
                     <ImageView
-                        android:background="@color/purple_200"
+                        android:background="@drawable/maytinh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="wrap_content"
+                        android:text="THI SÁCH HẠCH"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_marginRight="2dp"
@@ -55,7 +62,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1">
                     <ImageView
-                        android:background="@color/black"
+                        android:background="@drawable/iconhoclythuyet"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"/>
                 </LinearLayout>
@@ -64,7 +71,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1">
                     <ImageView
-                        android:background="@color/teal_700"
+                        android:background="@drawable/iconbienbao"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"/>
                 </LinearLayout>
@@ -82,7 +89,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1">
                     <ImageView
-                        android:background="#F12F2F"
+                        android:background="@drawable/iconbongden"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"/>
                 </LinearLayout>
@@ -95,14 +102,14 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/black" />
+                        android:background="@drawable/iconcaccausai" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1">
                     <ImageView
-                        android:background="#FFEB3B"
+                        android:background="@drawable/iconcaccausai"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"/>
                 </LinearLayout>

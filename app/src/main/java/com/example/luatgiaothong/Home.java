@@ -20,7 +20,7 @@ public class Home extends AppCompatActivity {
             public void onItemSelected(int i) {
                 switch (i){
                     case R.id.home:
-                        Navigation.findNavController(Home.this,R.id.nav_host_fragment_content_display_man).navigate(R.id.blankFragment);
+                        Navigation.findNavController(Home.this,R.id.nav_host_fragment_content_display_man).navigate(R.id.HomeFragment);
                         break;
                     case R.id.activity:
                         Navigation.findNavController(Home.this,R.id.nav_host_fragment_content_display_man).navigate(R.id.blankFragment2);

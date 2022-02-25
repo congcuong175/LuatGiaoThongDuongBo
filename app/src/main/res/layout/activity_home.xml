@@ -5,24 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="12"
+    android:weightSum="11"
     tools:context=".Home">
-   <LinearLayout
-       android:layout_weight="11"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent">
-       <androidx.appcompat.widget.Toolbar
-           android:layout_width="match_parent"
-           app:title="Home"
-           android:background="#78CAEF"
-           android:layout_height="match_parent"/>
-   </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:weightSum="10"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
         <LinearLayout
             android:layout_weight="1"
             android:layout_width="match_parent"
@@ -40,7 +24,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_weight="9"
+            android:layout_weight="10"
             android:layout_height="match_parent">
             <com.ismaeldivita.chipnavigation.ChipNavigationBar
                 android:layout_width="match_parent"
@@ -51,7 +35,6 @@
                 app:cnb_menuResource="@menu/menu" />
 
         </LinearLayout>
-    </LinearLayout>
 
 
 </LinearLayout>
