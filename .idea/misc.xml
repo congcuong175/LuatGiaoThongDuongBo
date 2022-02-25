@@ -3,6 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GitHub/app/src/main/res/font/brawler.xml" value="0.28020833333333334" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/activity_display_man.xml" value="0.23233695652173914" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/activity_home.xml" value="0.17708333333333334" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/app_bar_display_man.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/content_display_man.xml" value="0.2359375" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/fragment_blank.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/fragment_blank2.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/fragment_gallery.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/fragment_news.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/fragment_slideshow.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/imageadapter.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/imagecustom.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/nav_header_display_man.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/menu/activity_main_drawer.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/menu/display_man.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/menu/menu.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.121" />
         <entry key="..\:/Users/CongCuong/StudioProjects/LuatGiaoThong/app/src/main/res/layout/activity_home.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/CongCuong/StudioProjects/LuatGiaoThong/app/src/main/res/layout/activity_main.xml" value="0.25" />
       </map>
