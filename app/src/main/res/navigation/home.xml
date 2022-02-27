@@ -14,10 +14,19 @@
             android:id="@+id/action_blankFragment_to_blankFragment2"
             app:destination="@id/blankFragment2"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_blankFragment_to_menuDeThiFragment"
+            app:destination="@id/menuDeThiFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/blankFragment2"
         android:name="com.example.luatgiaothong.NewsFragment"
         android:label="fragment_blank2"
         tools:layout="@layout/fragment_news" />
+    <fragment
+        android:id="@+id/menuDeThiFragment"
+        android:name="com.example.luatgiaothong.MenuDeThiFragment"
+        android:label="fragment_menu_de_thi"
+        tools:layout="@layout/fragment_menu_de_thi" />
 </navigation>

@@ -15,11 +15,12 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listAnh"
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
-                android:orientation="horizontal"
-                android:id="@+id/listAnh"/>
+                android:orientation="horizontal" />
 
             <me.relex.circleindicator.CircleIndicator2
                 android:id="@+id/indicator"
@@ -50,6 +51,7 @@
                         android:layout_height="match_parent"
                         app:cardCornerRadius="10dp">
                         <LinearLayout
+                            android:id="@+id/linearThiSatHach"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"

@@ -9,26 +9,25 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.LinearLayout;
+
+import com.example.luatgiaothong.Adapter.PictureAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import me.relex.circleindicator.CircleIndicator;
 import me.relex.circleindicator.CircleIndicator2;
-import me.relex.circleindicator.CircleIndicator3;
 
 
 public class HomeFragment extends Fragment {
     Home home;
     PictureAdapter adapter;
     List<Integer>arrayList=new ArrayList<>();
+    LinearLayout linearThiSatHach;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -49,7 +48,15 @@ public class HomeFragment extends Fragment {
         arrayList.add(R.drawable.santruonglai);
         arrayList.add(R.drawable.santruonglai);
         arrayList.add(R.drawable.santruonglai);
+        linearThiSatHach=view.findViewById(R.id.linearThiSatHach);
+        linearThiSatHach.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_blankFragment_to_menuDeThiFragment);
 
+           //     Navigation.findNavController(getActivity(),R.id.nav_host_fragment_content_display_man).navigate(R.id.menuDeThiFragment);
+            }
+        });
         adapter=new PictureAdapter(arrayList,home);
         RecyclerView recyclerView=view.findViewById(R.id.listAnh);
         recyclerView.setLayoutManager(new LinearLayoutManager(home, RecyclerView.HORIZONTAL, false));
