@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment {
     Home home;
     PictureAdapter adapter;
     List<Integer>arrayList=new ArrayList<>();
-    LinearLayout linearThiSatHach;
+    LinearLayout linearThiSatHach,lnlout_meoThi;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -49,12 +49,20 @@ public class HomeFragment extends Fragment {
         arrayList.add(R.drawable.santruonglai);
         arrayList.add(R.drawable.santruonglai);
         linearThiSatHach=view.findViewById(R.id.linearThiSatHach);
+        lnlout_meoThi=view.findViewById(R.id.lnlout_meoThi);
         linearThiSatHach.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_blankFragment_to_menuDeThiFragment);
 
            //     Navigation.findNavController(getActivity(),R.id.nav_host_fragment_content_display_man).navigate(R.id.menuDeThiFragment);
+            }
+        });
+        lnlout_meoThi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_HomeFragment_to_meoThiFragment);
+
             }
         });
         adapter=new PictureAdapter(arrayList,home);

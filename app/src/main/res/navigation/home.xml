@@ -18,6 +18,9 @@
             android:id="@+id/action_blankFragment_to_menuDeThiFragment"
             app:destination="@id/menuDeThiFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_HomeFragment_to_meoThiFragment"
+            app:destination="@id/meoThiFragment" />
     </fragment>
     <fragment
         android:id="@+id/blankFragment2"
@@ -28,5 +31,20 @@
         android:id="@+id/menuDeThiFragment"
         android:name="com.example.luatgiaothong.MenuDeThiFragment"
         android:label="fragment_menu_de_thi"
-        tools:layout="@layout/fragment_menu_de_thi" />
+        tools:layout="@layout/fragment_menu_de_thi" >
+
+        <action
+            android:id="@+id/action_menuDeThiFragment_to_thiFragment2"
+            app:destination="@id/thiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/meoThiFragment"
+        android:name="com.example.luatgiaothong.MeoThiFragment"
+        android:label="fragment_meo_thi"
+        tools:layout="@layout/fragment_meo_thi" />
+    <fragment
+        android:id="@+id/thiFragment"
+        android:name="com.example.luatgiaothong.ThiFragment"
+        android:label="fragment_thi"
+        tools:layout="@layout/fragment_thi" />
 </navigation>

@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GitHub/app/src/main/res/drawable/bo2goc.xml" value="0.12" />
         <entry key="..\:/GitHub/app/src/main/res/drawable/botext.xml" value="0.12" />
+        <entry key="..\:/GitHub/app/src/main/res/drawable/ic_menu_camera.xml" value="0.1185" />
+        <entry key="..\:/GitHub/app/src/main/res/drawable/side_nav_bar.xml" value="0.145" />
         <entry key="..\:/GitHub/app/src/main/res/font/brawler.xml" value="0.28020833333333334" />
         <entry key="..\:/GitHub/app/src/main/res/layout/activity_display_man.xml" value="0.23233695652173914" />
         <entry key="..\:/GitHub/app/src/main/res/layout/activity_home.xml" value="0.17708333333333334" />
@@ -15,11 +18,14 @@
         <entry key="..\:/GitHub/app/src/main/res/layout/fragment_gallery.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/layout/fragment_menu_de_thi.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/fragment_meo_thi.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/layout/fragment_news.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/layout/fragment_slideshow.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/fragment_thi.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/layout/imageadapter.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/layout/imagecustom.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/layout/item_dethi.xml" value="0.2" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/item_meothi.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/layout/nav_header_display_man.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/menu/activity_main_drawer.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/menu/display_man.xml" value="0.25" />

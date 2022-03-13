@@ -5,17 +5,19 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.luatgiaothong.Adapter.DethiAdapter;
 import com.example.luatgiaothong.Entity.DeThi;
 
 import java.util.ArrayList;
-
+import static com.example.luatgiaothong.Home.chipNavigationBar;
 public class MenuDeThiFragment extends Fragment {
     ArrayList<DeThi>deThis=new ArrayList<>();
     DethiAdapter adapter;
@@ -42,6 +44,12 @@ public class MenuDeThiFragment extends Fragment {
         deThis.add(new DeThi(2,"20p"));
         adapter=new DethiAdapter(deThis,R.layout.item_dethi,getActivity());
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Navigation.findNavController(view).navigate(R.id.action_menuDeThiFragment_to_thiFragment2);
+            }
+        });
     }
 
     @Override
