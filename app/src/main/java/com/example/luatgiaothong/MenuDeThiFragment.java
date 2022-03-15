@@ -17,7 +17,7 @@ import com.example.luatgiaothong.Adapter.DethiAdapter;
 import com.example.luatgiaothong.Entity.DeThi;
 
 import java.util.ArrayList;
-import static com.example.luatgiaothong.Home.chipNavigationBar;
+import static com.example.luatgiaothong.Home.layout;
 public class MenuDeThiFragment extends Fragment {
     ArrayList<DeThi>deThis=new ArrayList<>();
     DethiAdapter adapter;
@@ -30,6 +30,7 @@ public class MenuDeThiFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         listView=view.findViewById(R.id.lv_deThi);
+        layout.setVisibility(View.GONE);
         deThis.add(new DeThi(2,"20p"));
         deThis.add(new DeThi(2,"20p"));
         deThis.add(new DeThi(2,"20p"));

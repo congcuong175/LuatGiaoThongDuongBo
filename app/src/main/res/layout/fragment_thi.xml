@@ -74,19 +74,72 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_weight="1"
+            android:weightSum="11"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/listAnh"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="230dp"
-                android:orientation="horizontal" />
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listCauhoi"
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp"
+                    android:orientation="horizontal" />
 
-            <me.relex.circleindicator.CircleIndicator2
-                android:id="@+id/indicator"
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="28dp"
-                />
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:weightSum="7"
+                android:background="#FBAFAF">
+                <LinearLayout
+                    android:layout_weight="6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    >
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_baseline_navigate_before_24"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="6"
+                    >
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/ln_bottom_sheet"
+                        android:gravity="center"
+                        >
+                        <TextView
+                            android:textSize="20dp"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:text="Câu hỏi 10/35"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_weight="5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        >
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/ic_baseline_navigate_next_24"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 

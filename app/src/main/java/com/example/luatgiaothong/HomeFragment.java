@@ -45,8 +45,14 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         home= (Home) getActivity();
         arrayList.add(R.drawable.santruonglai);
+        arrayList.add(R.drawable.maytinh);
+        arrayList.add(R.drawable.iconcaccausai);
         arrayList.add(R.drawable.santruonglai);
+        arrayList.add(R.drawable.maytinh);
+        arrayList.add(R.drawable.iconcaccausai);
         arrayList.add(R.drawable.santruonglai);
+        arrayList.add(R.drawable.maytinh);
+        arrayList.add(R.drawable.iconcaccausai);
         arrayList.add(R.drawable.santruonglai);
         linearThiSatHach=view.findViewById(R.id.linearThiSatHach);
         lnlout_meoThi=view.findViewById(R.id.lnlout_meoThi);
@@ -69,6 +75,7 @@ public class HomeFragment extends Fragment {
         RecyclerView recyclerView=view.findViewById(R.id.listAnh);
         recyclerView.setLayoutManager(new LinearLayoutManager(home, RecyclerView.HORIZONTAL, false));
         recyclerView.setAdapter(adapter);
+        recyclerView.smoothScrollToPosition(6); //Cuộn tới vị trí
         PagerSnapHelper pagerSnapHelper = new PagerSnapHelper();
         pagerSnapHelper.attachToRecyclerView(recyclerView);
         CircleIndicator2 indicator = view.findViewById(R.id.indicator);

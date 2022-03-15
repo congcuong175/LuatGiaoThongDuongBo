@@ -23,6 +23,7 @@
                 app:navGraph="@navigation/home" />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/lnloutchipnavi"
             android:layout_width="match_parent"
             android:layout_weight="10"
             android:layout_height="match_parent">

@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/GitHub/app/src/main/res/drawable/bo2goc.xml" value="0.12" />
         <entry key="..\:/GitHub/app/src/main/res/drawable/botext.xml" value="0.12" />
+        <entry key="..\:/GitHub/app/src/main/res/drawable/dialog_bg.xml" value="0.1185" />
         <entry key="..\:/GitHub/app/src/main/res/drawable/ic_menu_camera.xml" value="0.1185" />
         <entry key="..\:/GitHub/app/src/main/res/drawable/side_nav_bar.xml" value="0.145" />
         <entry key="..\:/GitHub/app/src/main/res/font/brawler.xml" value="0.28020833333333334" />
@@ -12,6 +13,7 @@
         <entry key="..\:/GitHub/app/src/main/res/layout/activity_home.xml" value="0.17708333333333334" />
         <entry key="..\:/GitHub/app/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
         <entry key="..\:/GitHub/app/src/main/res/layout/app_bar_display_man.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/bottomsheet.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/layout/content_display_man.xml" value="0.2359375" />
         <entry key="..\:/GitHub/app/src/main/res/layout/fragment_blank.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/layout/fragment_blank2.xml" value="0.25" />

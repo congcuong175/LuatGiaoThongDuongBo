@@ -5,16 +5,20 @@ import androidx.navigation.Navigation;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 public class Home extends AppCompatActivity {
     public static ChipNavigationBar chipNavigationBar;
+    public static LinearLayout layout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         chipNavigationBar=findViewById(R.id.chipNVGT);
+        layout=findViewById(R.id.lnloutchipnavi);
+
         chipNavigationBar.setItemSelected(R.id.home,true);
         chipNavigationBar.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
             @Override
@@ -33,5 +37,11 @@ public class Home extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        layout.setVisibility(View.VISIBLE);
     }
 }
