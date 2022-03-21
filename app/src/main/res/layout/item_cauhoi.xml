@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv_cauhoi"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:text="Đây là câu hỏi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:gravity="center"
+      android:layout_height="wrap_content">
+      <ImageView
+          android:background="@color/black"
+          android:id="@+id/img_cauhoi"
+          android:layout_width="250dp"
+          android:layout_height="170dp"/>
+  </LinearLayout>
+    <ListView
+        android:id="@+id/lv_cautraloi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:choiceMode="singleChoice"
+        android:descendantFocusability="beforeDescendants"/>
+</LinearLayout>
