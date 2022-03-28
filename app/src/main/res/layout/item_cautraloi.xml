@@ -18,6 +18,7 @@
             android:textColor="@color/black"
             android:textSize="20dip" />
         <TextView
+            android:fontFamily="@font/brawler"
             android:id="@+id/tv_cautraloi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

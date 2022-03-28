@@ -18,10 +18,10 @@ public interface ApiService {
             .setDateFormat("yyyy-MM-dd HH:mm:ss")
             .create();
     ApiService apiservice=new Retrofit.Builder()
-            .baseUrl("http://192.168.1.11:55555/")
+            .baseUrl("http://10.40.9.169:44444/api/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
             .create(ApiService.class);
-    @GET("api/values")
-    Call<CauHoiEntity> getDuLieu();
+    @GET("Values")
+    Call<List<CauHoiEntity>> getDuLieu();
 }

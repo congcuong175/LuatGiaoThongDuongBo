@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.luatgiaothong.Entity.CauHoiEntity;
 import com.example.luatgiaothong.Entity.MeoThi;
 import com.example.luatgiaothong.R;
@@ -48,8 +49,14 @@ public class CauHoiAdapter extends RecyclerView.Adapter<CauHoiAdapter.CauHoiView
         if(cauHoiEntity==null){
             return;
         }
-        holder.tv_CauHoi.setText(cauHoiEntity.getNoiDung());
-        Picasso.get().load(cauHoiEntity.getHinhAnh()).into(holder.img_CauHoi);
+        holder.tv_CauHoi.setText("Câu "+cauHoiEntity.getMaCH()+": " +cauHoiEntity.getNoiDung());
+        if(cauHoiEntity.getHinhAnh()!=null && !cauHoiEntity.getHinhAnh().equals("")){
+            holder.img_CauHoi.setVisibility(View.VISIBLE);
+            Glide.with(mContext).load(cauHoiEntity.getHinhAnh()).into(holder.img_CauHoi);
+        }
+        else {
+            holder.img_CauHoi.setVisibility(View.GONE);
+        }
         DapAnAdapter adapter=new DapAnAdapter(cauHoiEntity.getDapAnEntities(),R.layout.item_cautraloi,mContext);
         holder.list_CauTRL.setAdapter(adapter);
         holder.list_CauTRL.setOnItemClickListener(new AdapterView.OnItemClickListener() {

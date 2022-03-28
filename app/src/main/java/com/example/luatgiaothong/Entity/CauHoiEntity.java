@@ -1,11 +1,17 @@
 package com.example.luatgiaothong.Entity;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class CauHoiEntity {
+    @SerializedName("MaCH")
     private int maCH;
+    @SerializedName("NoiDung")
     private String noiDung;
+    @SerializedName("HinhAnh")
     private String hinhAnh;
+    @SerializedName("DapAnEntities")
     private List<DapAnEntity> dapAnEntities;
     private boolean ktdung;
 

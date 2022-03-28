@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,11 +26,16 @@ import android.widget.Toast;
 
 import com.example.luatgiaothong.Adapter.CauHoiAdapter;
 import com.example.luatgiaothong.Adapter.PictureAdapter;
+import com.example.luatgiaothong.Api.ApiService;
 import com.example.luatgiaothong.Entity.CauHoiEntity;
 import com.example.luatgiaothong.Entity.DapAnEntity;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class ThiFragment extends Fragment {
@@ -60,16 +66,25 @@ TextView tv_ketthucbaithi;
             }
         });
         tv_ketthucbaithi=view.findViewById(R.id.tv_ketthucbaithi);
-        List<DapAnEntity>dapAnEntityList=new ArrayList<>();
-        dapAnEntityList.add(new DapAnEntity(1,"A Súc vật thiện 1",true));
-        dapAnEntityList.add(new DapAnEntity(2,"B Súc vật thiện 2",false));
-        dapAnEntityList.add(new DapAnEntity(3,"C Súc vật thiện 3",false));
-        arrayList.add(new CauHoiEntity(1,"Thiện là súc vật?","https://scontent.fhan5-3.fna.fbcdn.net/v/t39.30808-6/240587368_2665743627052756_506045393396876329_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=ErSf6vogMs0AX8OzA-t&_nc_ht=scontent.fhan5-3.fna&oh=00_AT_ePqTO7aj50ejWVszapd_4Ttq5EgtWM1y0bd963u188A&oe=623CDB19",dapAnEntityList));
-        arrayList.add(new CauHoiEntity(1,"Thiện là súc vật?",null,dapAnEntityList));
-        arrayList.add(new CauHoiEntity(1,"Thiện là súc vật?",null,dapAnEntityList));
-        arrayList.add(new CauHoiEntity(1,"Thiện là súc vật?",null,dapAnEntityList));
         cauhoiAdapter=new CauHoiAdapter(getActivity());
         cauhoiAdapter.setData(arrayList);
+        ApiService.apiservice.getDuLieu().enqueue(new Callback<List<CauHoiEntity>>() {
+            @Override
+            public void onResponse(Call<List<CauHoiEntity>> call, Response<List<CauHoiEntity>> response) {
+                for(CauHoiEntity ch: response.body()){
+                    arrayList.add(ch);
+                }
+                cauhoiAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<List<CauHoiEntity>> call, Throwable t) {
+                Log.e("Lỗi gì đó",t.toString());
+                Toast.makeText(getActivity(),"Server Lỗi",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
         tv_ketthucbaithi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,6 +96,7 @@ TextView tv_ketthucbaithi;
         recyclerView.setAdapter(cauhoiAdapter);
         PagerSnapHelper pagerSnapHelper = new PagerSnapHelper();
         pagerSnapHelper.attachToRecyclerView(recyclerView);
+
     }
     private void showDiaglog(){
         Dialog dialog=new Dialog(getActivity());

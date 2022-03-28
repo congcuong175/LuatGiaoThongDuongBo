@@ -1,8 +1,13 @@
 package com.example.luatgiaothong.Entity;
 
+import com.google.gson.annotations.SerializedName;
+
 public class DapAnEntity {
+    @SerializedName("MaDA")
     private int maDA;
+    @SerializedName("DapAN")
     private String dapAN;
+    @SerializedName("KiemTra")
     private Boolean kiemTra;
 
     public int getMaDA() {

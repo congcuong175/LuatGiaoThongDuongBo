@@ -7,6 +7,7 @@
         <entry key="..\:/GitHub/app/src/main/res/drawable/botext.xml" value="0.12" />
         <entry key="..\:/GitHub/app/src/main/res/drawable/dialog_bg.xml" value="0.1185" />
         <entry key="..\:/GitHub/app/src/main/res/drawable/ic_menu_camera.xml" value="0.1185" />
+        <entry key="..\:/GitHub/app/src/main/res/drawable/ic_traffic_jam.xml" value="0.129" />
         <entry key="..\:/GitHub/app/src/main/res/drawable/side_nav_bar.xml" value="0.145" />
         <entry key="..\:/GitHub/app/src/main/res/font/brawler.xml" value="0.28020833333333334" />
         <entry key="..\:/GitHub/app/src/main/res/layout/activity_display_man.xml" value="0.23233695652173914" />
@@ -35,6 +36,7 @@
         <entry key="..\:/GitHub/app/src/main/res/menu/display_man.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/menu/menu.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.121" />
+        <entry key="..\:/GitHub/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.129" />
         <entry key="..\:/Users/CongCuong/StudioProjects/LuatGiaoThong/app/src/main/res/layout/activity_home.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/CongCuong/StudioProjects/LuatGiaoThong/app/src/main/res/layout/activity_main.xml" value="0.25" />
       </map>

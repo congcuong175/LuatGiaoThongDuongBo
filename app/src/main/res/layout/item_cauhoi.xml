@@ -4,10 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <TextView
+        android:layout_marginBottom="10dp"
         android:id="@+id/tv_cauhoi"
-        android:textColor="@color/black"
+        android:textColor="#FF0B0B"
         android:textSize="20dp"
         android:text="Đây là câu hỏi"
+        android:fontFamily="@font/brawler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
   <LinearLayout
@@ -15,7 +17,6 @@
       android:gravity="center"
       android:layout_height="wrap_content">
       <ImageView
-          android:background="@color/black"
           android:id="@+id/img_cauhoi"
           android:layout_width="250dp"
           android:layout_height="170dp"/>
