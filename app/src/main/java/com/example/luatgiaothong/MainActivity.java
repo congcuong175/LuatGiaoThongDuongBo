@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         text3.setVisibility(View.INVISIBLE);
         line1=findViewById(R.id.line1);
         line1.setVisibility(View.INVISIBLE);
-        new Handler().postDelayed(new Runnable() {
+         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 text1.setVisibility(View.VISIBLE);

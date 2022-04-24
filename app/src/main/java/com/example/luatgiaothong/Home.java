@@ -31,6 +31,7 @@ public class Home extends AppCompatActivity {
                         Navigation.findNavController(Home.this,R.id.nav_host_fragment_content_display_man).navigate(R.id.blankFragment2);
                         break;
                     case R.id.favorites:
+                        Navigation.findNavController(Home.this,R.id.nav_host_fragment_content_display_man).navigate(R.id.mapsFragment);
                          break;
                     case R.id.settings:
                         break;

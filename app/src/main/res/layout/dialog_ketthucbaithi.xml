@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:background="@drawable/bo2goc"
+        android:padding="30dp"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_marginBottom="50dp"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="251dp"
+                android:layout_marginBottom="40dp"
+                android:layout_height="216dp">
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/animationView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/car"
+                    app:lottie_url="REPLACE_JSON_URL" />
+            </LinearLayout>
+
+
+            <TextView
+                android:textSize="30dp"
+                android:fontFamily="@font/brawler"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:text="Bạn Thi Trượt Rùi"
+                android:layout_width="match_parent"
+                android:id="@+id/tv_notikq"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:textSize="30dp"
+                android:fontFamily="@font/brawler"
+                android:textColor="@color/black"
+                android:text="30/35"
+                android:layout_width="wrap_content"
+                android:id="@+id/tv_notisocau"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatButton
+                android:background="@drawable/bo2goc"
+                android:backgroundTint="#76F468"
+                android:id="@+id/btn_xemlai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Xem lại"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:background="@drawable/bo2goc"
+                android:backgroundTint="#76F468"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/btn_trove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Làm lại"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

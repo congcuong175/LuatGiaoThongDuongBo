@@ -17,10 +17,18 @@
         <action
             android:id="@+id/action_blankFragment_to_menuDeThiFragment"
             app:destination="@id/menuDeThiFragment"
+            app:enterAnim="@anim/fadein"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_HomeFragment_to_meoThiFragment"
             app:destination="@id/meoThiFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_hocLyThuyet"
+            app:destination="@id/hocLyThuyet"
+            app:enterAnim="@anim/fadein" />
+        <action
+            android:id="@+id/action_HomeFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
     </fragment>
     <fragment
         android:id="@+id/blankFragment2"
@@ -35,7 +43,8 @@
 
         <action
             android:id="@+id/action_menuDeThiFragment_to_thiFragment2"
-            app:destination="@id/thiFragment" />
+            app:destination="@id/thiFragment"
+            app:enterAnim="@anim/fadein" />
     </fragment>
     <fragment
         android:id="@+id/meoThiFragment"
@@ -47,4 +56,14 @@
         android:name="com.example.luatgiaothong.ThiFragment"
         android:label="fragment_thi"
         tools:layout="@layout/fragment_thi" />
+    <fragment
+        android:id="@+id/hocLyThuyet"
+        android:name="com.example.luatgiaothong.HocLyThuyet"
+        android:label="fragment_hoc_ly_thuyet"
+        tools:layout="@layout/fragment_hoc_ly_thuyet" />
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.luatgiaothong.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
 </navigation>

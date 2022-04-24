@@ -1,4 +1,5 @@
-package com.example.luatgiaothong.Adapter;
+package com.example.luatgiaothong.Adapter.LyThuyet;
+
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -23,52 +24,45 @@ import com.ramotion.foldingcell.FoldingCell;
 import java.util.ArrayList;
 import java.util.List;
 import static com.example.luatgiaothong.ThiFragment.click;
-public class DapAnAdapter extends RecyclerView.Adapter<DapAnAdapter.DapAnViewHolder> {
+public class LTDapAnAdapter extends RecyclerView.Adapter<LTDapAnAdapter.LTDapAnViewHolder> {
     List<DapAnEntity> dapAnEntityList;
-    public DapAnAdapter(List<DapAnEntity> dapAnEntityList) {
+    public LTDapAnAdapter(List<DapAnEntity> dapAnEntityList) {
         this.dapAnEntityList = dapAnEntityList;
     }
+
     @NonNull
     @Override
-    public DapAnViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public LTDapAnViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cautraloi,parent,false);
-        return new DapAnViewHolder(view);
+        return new LTDapAnViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DapAnViewHolder holder, @SuppressLint("RecyclerView") int position) {
-
+    public void onBindViewHolder(@NonNull LTDapAnViewHolder holder, @SuppressLint("RecyclerView") int position) {
         DapAnEntity dapAnEntity=dapAnEntityList.get(position);
         if(dapAnEntity==null){
             return;
         }
         holder.textView.setText(dapAnEntity.getDapAN());
-        if(click==1){
+
             if(dapAnEntity.getDapAnChoose()==1){
                 holder.rbSelect.setChecked(true);
+                if(dapAnEntity.getKiemTra()){
+                    holder.textView.setTextColor(Color.RED);
+                }
+                else{
+                    holder.textView.setTextColor(Color.BLACK);
+                }
             }
             else{
                 holder.rbSelect.setChecked(false);
             }
-        }else {
-            if(dapAnEntity.getKiemTra()){
-                holder.textView.setTextColor(Color.RED);
-            }
-            else{
-                holder.textView.setTextColor(Color.BLACK);
-            }
-            if(dapAnEntity.getDapAnChoose()==1){
-                holder.rbSelect.setChecked(true);
-            }
-            else{
-                holder.rbSelect.setChecked(false);
-            }
-        }
+
 
         holder.ln_cautrl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(click==1){
+
                     for(int i=0;i<dapAnEntityList.size();i++){
                         if(dapAnEntity.getMaDA()==dapAnEntityList.get(i).getMaDA()){
                             dapAnEntityList.get(i).setDapAnChoose(1);
@@ -77,24 +71,24 @@ public class DapAnAdapter extends RecyclerView.Adapter<DapAnAdapter.DapAnViewHol
                             dapAnEntityList.get(i).setDapAnChoose(0);
                         }
                     }
-                    notifyDataSetChanged();
-                }
 
+                notifyDataSetChanged();
             }
         });
+
     }
 
     @Override
     public int getItemCount() {
 
-            return dapAnEntityList.size();
+        return dapAnEntityList.size();
 
     }
-    public class DapAnViewHolder extends RecyclerView.ViewHolder {
+    public class LTDapAnViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
         RadioButton rbSelect;
         LinearLayout ln_cautrl;
-        public DapAnViewHolder(@NonNull View itemView) {
+        public LTDapAnViewHolder(@NonNull View itemView) {
             super(itemView);
             textView=itemView.findViewById(R.id.tv_cautraloi);
             rbSelect= itemView.findViewById(R.id.rdo_chondapan);

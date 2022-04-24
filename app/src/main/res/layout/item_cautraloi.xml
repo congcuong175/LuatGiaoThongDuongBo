@@ -2,6 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:gravity="center"
+    android:id="@+id/ln_cautrl"
+    android:paddingBottom="3dp"
     android:layout_height="wrap_content">
         <RadioButton
             android:id="@+id/rdo_chondapan"
@@ -16,7 +18,7 @@
             android:drawablePadding="15dp"
             android:drawableLeft="@android:drawable/btn_radio"
             android:textColor="@color/black"
-            android:textSize="20dip" />
+            />
         <TextView
             android:fontFamily="@font/brawler"
             android:id="@+id/tv_cautraloi"
@@ -24,5 +26,5 @@
             android:layout_height="wrap_content"
             android:text="Đường bộ là gì?"
             android:textColor="@color/black"
-            android:textSize="20dp"/>
+            android:textSize="15dp"/>
 </LinearLayout>

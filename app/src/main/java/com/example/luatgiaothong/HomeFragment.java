@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment {
     Home home;
     PictureAdapter adapter;
     List<Integer>arrayList=new ArrayList<>();
-    LinearLayout linearThiSatHach,lnlout_meoThi;
+    LinearLayout linearThiSatHach,lnlout_meoThi,ln_hoclythuyet;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -56,6 +56,7 @@ public class HomeFragment extends Fragment {
         arrayList.add(R.drawable.santruonglai);
         linearThiSatHach=view.findViewById(R.id.linearThiSatHach);
         lnlout_meoThi=view.findViewById(R.id.lnlout_meoThi);
+        ln_hoclythuyet=view.findViewById(R.id.ln_hoclythuyet);
         linearThiSatHach.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,6 +72,13 @@ public class HomeFragment extends Fragment {
 
             }
         });
+        ln_hoclythuyet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_HomeFragment_to_hocLyThuyet);
+            }
+        });
+
         adapter=new PictureAdapter(arrayList,home);
         RecyclerView recyclerView=view.findViewById(R.id.listAnh);
         recyclerView.setLayoutManager(new LinearLayoutManager(home, RecyclerView.HORIZONTAL, false));

@@ -1,7 +1,11 @@
 package com.example.luatgiaothong.Entity;
 
+import com.google.gson.annotations.SerializedName;
+
 public class DeThi {
+    @SerializedName("MABODE")
     int maDe;
+    @SerializedName("THOIGIANTHI")
     String thoiGian;
 
     public DeThi() {

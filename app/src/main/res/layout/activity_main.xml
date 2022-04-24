@@ -11,7 +11,6 @@
     <LinearLayout
         android:layout_width="251dp"
         android:layout_height="216dp">
-
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/animationView"
             android:layout_width="match_parent"

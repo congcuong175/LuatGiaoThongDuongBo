@@ -1,10 +1,22 @@
 package com.example.luatgiaothong.Entity;
 
+import com.google.gson.annotations.SerializedName;
+
 public class MeoThi {
-    private String title;
-    private String content;
+    @SerializedName("MAMEO")
+     String maMeo;
+    @SerializedName("TENMEO")
+     String title;
+    @SerializedName("NOIDUNG")
+     String content;
 
     public MeoThi() {
+    }
+
+    public MeoThi(String maMeo, String title, String content) {
+        this.maMeo = maMeo;
+        this.title = title;
+        this.content = content;
     }
 
     public String getTitle() {
@@ -26,5 +38,13 @@ public class MeoThi {
     public MeoThi(String title, String content) {
         this.title = title;
         this.content = content;
+    }
+
+    public String getMaMeo() {
+        return maMeo;
+    }
+
+    public void setMaMeo(String maMeo) {
+        this.maMeo = maMeo;
     }
 }

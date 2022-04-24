@@ -13,9 +13,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.luatgiaothong.Adapter.MeoThiApdater;
+import com.example.luatgiaothong.Api.ApiService;
 import com.example.luatgiaothong.Entity.MeoThi;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class MeoThiFragment extends Fragment {
@@ -29,11 +35,20 @@ public class MeoThiFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        meoThis.add(new MeoThi("Nội Dung","Đây là nội dung Đây là nội dung Đây là nội dung Đây là nội dung Đây là nội dung Đây là nội dung"));
-        meoThis.add(new MeoThi("Nội Dung","Đây là nội dung Đây là nội dung Đây là nội dung Đây là nội dung Đây là nội dung Đây là nội dung"));
-        meoThis.add(new MeoThi("Nội Dung","Đây là nội dung Đây là nội dung Đây là nội dung Đây là nội dung Đây là nội dung Đây là nội dung"));
-        meoThis.add(new MeoThi("Nội Dung","Đây là nội dung Đây là nội dung Đây là nội dung Đây là nội dung Đây là nội dung Đây là nội dung"));
-        meoThis.add(new MeoThi("Nội Dung","Đây là nội dung Đây là nội dung Đây là nội dung Đây là nội dung Đây là nội dung Đây là nội dung"));
+        ApiService.apiservice.getDuLieuMeoThi().enqueue(new Callback<List<MeoThi>>() {
+            @Override
+            public void onResponse(Call<List<MeoThi>> call, Response<List<MeoThi>> response) {
+                for(MeoThi mt: response.body()){
+                    meoThis.add(mt);
+                }
+                apdater.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<List<MeoThi>> call, Throwable t) {
+
+            }
+        });
         rcvMeoThi=view.findViewById(R.id.rcv_meoThi);
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getActivity());
         rcvMeoThi.setLayoutManager(linearLayoutManager);

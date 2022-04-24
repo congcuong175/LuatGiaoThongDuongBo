@@ -22,13 +22,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#6EBBF8"
-                    android:weightSum="4">
+                    android:weightSum="3">
                     <LinearLayout
                         android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <TextView
-
+                            android:id="@+id/tv_tieude"
                             android:paddingLeft="15dp"
                             android:layout_gravity="center"
                             android:text="Đề 1"
@@ -44,20 +44,9 @@
                         android:gravity="center"
                         android:layout_height="match_parent">
                         <TextView
+                            android:id="@+id/tv_time"
                             android:layout_gravity="center"
                             android:text="15:45"
-                            android:textSize="20dp"
-                            android:layout_width="wrap_content"
-                            android:textColor="@color/black"
-                            android:layout_height="wrap_content"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <TextView
-                            android:layout_gravity="center"
-                            android:text="Câu 10"
                             android:textSize="20dp"
                             android:layout_width="wrap_content"
                             android:textColor="@color/black"
@@ -69,7 +58,7 @@
                         android:layout_height="match_parent">
                         <TextView
                             android:id="@+id/tv_ketthucbaithi"
-                            android:layout_marginRight="5dp"
+                            android:layout_marginRight="10dp"
                             android:layout_gravity="center"
                             android:text="Kết thúc"
                             android:textSize="20dp"
@@ -90,11 +79,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/listCauhoi"
@@ -102,59 +86,9 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal" />
 
-            </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="10"
-                android:weightSum="7"
-                android:background="#FBAFAF">
-                <LinearLayout
-                    android:layout_weight="6"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    >
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:background="@drawable/ic_baseline_navigate_before_24"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:weightSum="6"
-                    >
-                    <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/ln_bottom_sheet"
-                        android:gravity="center"
-                        >
-                        <TextView
-                            android:textSize="20dp"
-                            android:textColor="@color/black"
-                            android:layout_width="wrap_content"
-                            android:text="Câu hỏi 10/35"
-                            android:layout_height="wrap_content"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_weight="5"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        >
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:background="@drawable/ic_baseline_navigate_next_24"/>
-                    </LinearLayout>
-                </LinearLayout>
 
-            </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
 

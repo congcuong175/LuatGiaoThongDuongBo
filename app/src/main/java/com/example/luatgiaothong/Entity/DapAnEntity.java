@@ -9,6 +9,15 @@ public class DapAnEntity {
     private String dapAN;
     @SerializedName("KiemTra")
     private Boolean kiemTra;
+    private int dapAnChoose;
+
+    public int getDapAnChoose() {
+        return dapAnChoose;
+    }
+
+    public void setDapAnChoose(int dapAnChoose) {
+        this.dapAnChoose = dapAnChoose;
+    }
 
     public int getMaDA() {
         return maDA;
@@ -38,5 +47,6 @@ public class DapAnEntity {
         this.maDA = maDA;
         this.dapAN = dapAN;
         this.kiemTra = kiemTra;
+        this.dapAnChoose=0;
     }
 }

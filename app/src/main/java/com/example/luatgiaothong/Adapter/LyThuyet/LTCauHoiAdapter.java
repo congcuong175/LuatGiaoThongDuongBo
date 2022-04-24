@@ -1,4 +1,5 @@
-package com.example.luatgiaothong.Adapter;
+package com.example.luatgiaothong.Adapter.LyThuyet;
+
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -18,15 +19,17 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import static com.example.luatgiaothong.ThiFragment.click;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.luatgiaothong.Adapter.DapAnAdapter;
 import com.example.luatgiaothong.Entity.CauHoiEntity;
 import com.example.luatgiaothong.Entity.DapAnEntity;
 import com.example.luatgiaothong.Entity.MeoThi;
+import com.example.luatgiaothong.HocLyThuyet;
 import com.example.luatgiaothong.R;
 import com.example.luatgiaothong.ThiFragment;
 import com.ramotion.foldingcell.FoldingCell;
@@ -34,12 +37,14 @@ import com.squareup.picasso.Picasso;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
-public class CauHoiAdapter extends RecyclerView.Adapter<CauHoiAdapter.CauHoiViewHolder>{
+public class LTCauHoiAdapter extends RecyclerView.Adapter<LTCauHoiAdapter.LTCauHoiViewHolder>{
     private Context mContext;
     private ArrayList<CauHoiEntity> cauHoiEntities;
-    public DapAnAdapter adapter;
-    public CauHoiAdapter(Context mContext) {
+    public LTDapAnAdapter adapter;
+    public LTCauHoiAdapter(Context mContext) {
         this.mContext = mContext;
     }
     public void setData(ArrayList<CauHoiEntity> cauHoiEntities)
@@ -50,18 +55,18 @@ public class CauHoiAdapter extends RecyclerView.Adapter<CauHoiAdapter.CauHoiView
 
     @NonNull
     @Override
-    public CauHoiViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public LTCauHoiViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cauhoi,parent,false);
-        return new CauHoiAdapter.CauHoiViewHolder(view);
+        return new LTCauHoiViewHolder(view);
     }
     @Override
-    public void onBindViewHolder(@NonNull CauHoiViewHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(@NonNull LTCauHoiViewHolder holder, @SuppressLint("RecyclerView") int position) {
         CauHoiEntity cauHoiEntity=cauHoiEntities.get(position);
 
         if(cauHoiEntity==null){
             return;
         }
-        holder.tv_CauHoi.setText("Câu "+(position+1)+": " +cauHoiEntity.getNoiDung());
+        holder.tv_CauHoi.setText("Câu "+cauHoiEntity.getMaCH()+": " +cauHoiEntity.getNoiDung());
         holder.tv_cauhoiso.setText("Câu hỏi "+(position+1)+"/"+cauHoiEntities.size());
         if(cauHoiEntity.getHinhAnh()!=null && !cauHoiEntity.getHinhAnh().equals("")){
             holder.img_CauHoi.setVisibility(View.VISIBLE);
@@ -70,7 +75,7 @@ public class CauHoiAdapter extends RecyclerView.Adapter<CauHoiAdapter.CauHoiView
         else {
             holder.img_CauHoi.setVisibility(View.GONE);
         }
-        adapter=new DapAnAdapter(cauHoiEntity.getDapAnEntities());
+        adapter=new LTDapAnAdapter(cauHoiEntity.getDapAnEntities());
         holder.list_CauTRL.setAdapter(adapter);
         holder.list_CauTRL.setLayoutManager(new LinearLayoutManager(mContext, RecyclerView.VERTICAL, false));
         holder.ln_bottom_sheet.setOnClickListener(new View.OnClickListener() {
@@ -79,8 +84,6 @@ public class CauHoiAdapter extends RecyclerView.Adapter<CauHoiAdapter.CauHoiView
                 showDiaglog();
             }
         });
-
-
     }
     public int getCauTraLoiDung(){
         int dem=0;
@@ -107,23 +110,22 @@ public class CauHoiAdapter extends RecyclerView.Adapter<CauHoiAdapter.CauHoiView
     }
 
 
-    public class CauHoiViewHolder extends RecyclerView.ViewHolder {
-       private TextView tv_CauHoi,tv_cauhoiso;
-       private ImageView img_CauHoi;
-       private RecyclerView list_CauTRL;
-       private LinearLayout ln_bottom_sheet;
-        public CauHoiViewHolder(@NonNull View itemView) {
+    public class LTCauHoiViewHolder extends RecyclerView.ViewHolder {
+        private TextView tv_CauHoi,tv_cauhoiso;
+        private ImageView img_CauHoi;
+        private RecyclerView list_CauTRL;
+        private LinearLayout ln_bottom_sheet;
+        public LTCauHoiViewHolder(@NonNull View itemView) {
             super(itemView);
-           tv_CauHoi=itemView.findViewById(R.id.tv_cauhoi);
+            tv_CauHoi=itemView.findViewById(R.id.tv_cauhoi);
             tv_cauhoiso=itemView.findViewById(R.id.tv_cauhoiso);
-           img_CauHoi=itemView.findViewById(R.id.img_cauhoi);
-           list_CauTRL=itemView.findViewById(R.id.lv_cautraloi);
-
+            img_CauHoi=itemView.findViewById(R.id.img_cauhoi);
+            list_CauTRL=itemView.findViewById(R.id.lv_cautraloi);
             ln_bottom_sheet=itemView.findViewById(R.id.ln_bottom_sheet);
 
         }
     }
-        private void showDiaglog(){
+    private void showDiaglog(){
         Dialog dialog=new Dialog(mContext);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.bottomsheet);
@@ -132,16 +134,22 @@ public class CauHoiAdapter extends RecyclerView.Adapter<CauHoiAdapter.CauHoiView
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations=R.style.DialogAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
-            GridView grv_listCauHoi=dialog.findViewById(R.id.grv_listCauHoi);
-            Integer[] arr=new Integer[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35};
-            ArrayAdapter<Integer> adapter=new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1,arr);
-            grv_listCauHoi.setAdapter(adapter);
-            grv_listCauHoi.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    ThiFragment.scolltoPager(i);
-                    dialog.hide();
-                }
-            });
+        GridView grv_listCauHoi=dialog.findViewById(R.id.grv_listCauHoi);
+        List<Integer> arr=new LinkedList<>();
+        for (int i=0;i<cauHoiEntities.size();i++)
+        {
+            arr.add(i+1);
+        }
+        ArrayAdapter<Integer> adapter=new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1,arr);
+        grv_listCauHoi.setAdapter(adapter);
+        //adapter.notifyDataSetChanged();
+        grv_listCauHoi.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                HocLyThuyet.scolltoPager(i);
+                dialog.hide();
+            }
+        });
     }
 }
+

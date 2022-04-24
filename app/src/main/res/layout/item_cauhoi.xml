@@ -2,29 +2,76 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <TextView
-        android:layout_marginBottom="10dp"
-        android:id="@+id/tv_cauhoi"
-        android:textColor="#FF0B0B"
-        android:textSize="20dp"
-        android:text="Đây là câu hỏi"
-        android:fontFamily="@font/brawler"
+    android:layout_height="match_parent"
+    android:weightSum="13">
+    <LinearLayout
+        android:layout_weight="1"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:gravity="center"
-      android:layout_height="wrap_content">
-      <ImageView
-          android:id="@+id/img_cauhoi"
-          android:layout_width="250dp"
-          android:layout_height="170dp"/>
-  </LinearLayout>
-    <ListView
-        android:id="@+id/lv_cautraloi"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_marginBottom="10dp"
+            android:id="@+id/tv_cauhoi"
+            android:textColor="#FF0B0B"
+            android:textSize="20dp"
+            android:text="Đây là câu hỏi"
+            android:fontFamily="@font/brawler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/img_cauhoi"
+                android:layout_width="250dp"
+                android:layout_height="170dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lv_cautraloi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:choiceMode="singleChoice"
+                android:descendantFocusability="beforeDescendants"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="bottom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:choiceMode="singleChoice"
-        android:descendantFocusability="beforeDescendants"/>
+        android:layout_height="match_parent"
+        android:layout_weight="12"
+        android:weightSum="7"
+      >
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="6"
+            >
+            <LinearLayout
+                android:background="@drawable/bo2goctren"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ln_bottom_sheet"
+                android:gravity="center"
+                >
+                <TextView
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tv_cauhoiso"
+                    android:fontFamily="@font/brawler"
+                    android:text="Câu hỏi 10/35"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 </LinearLayout>

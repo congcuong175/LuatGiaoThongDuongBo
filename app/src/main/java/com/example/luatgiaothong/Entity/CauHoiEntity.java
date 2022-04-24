@@ -13,15 +13,7 @@ public class CauHoiEntity {
     private String hinhAnh;
     @SerializedName("DapAnEntities")
     private List<DapAnEntity> dapAnEntities;
-    private boolean ktdung;
 
-    public boolean isKtdung() {
-        return ktdung;
-    }
-
-    public void setKtdung(boolean ktdung) {
-        this.ktdung = ktdung;
-    }
 
     public int getMaCH() {
         return maCH;

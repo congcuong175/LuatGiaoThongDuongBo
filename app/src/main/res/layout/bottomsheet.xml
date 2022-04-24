@@ -4,39 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/dialog_bg">
-    <TextView
+    <GridView
+        android:id="@+id/grv_listCauHoi"
+        android:numColumns="5"
         android:layout_width="match_parent"
-        android:text="Dialog"
-        android:textSize="25dp"
-        android:textAlignment="center"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:text="Dialog"
-        android:textSize="25dp"
-        android:textAlignment="center"
-        android:layout_height="wrap_content"/>    <TextView
-    android:layout_width="match_parent"
-    android:text="Dialog"
-    android:textSize="25dp"
-    android:textAlignment="center"
-    android:layout_height="wrap_content"/>    <TextView
-    android:layout_width="match_parent"
-    android:text="Dialog"
-    android:textSize="25dp"
-    android:textAlignment="center"
-    android:layout_height="wrap_content"/>    <TextView
-    android:layout_width="match_parent"
-    android:text="Dialog"
-    android:textSize="25dp"
-    android:textAlignment="center"
-    android:layout_height="wrap_content"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:text="Dialog"
-        android:textSize="25dp"
-        android:textAlignment="center"
-        android:layout_height="wrap_content"/>
-
-
+        android:layout_height="350dp"/>
 </LinearLayout>
