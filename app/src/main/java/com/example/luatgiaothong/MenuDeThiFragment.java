@@ -46,10 +46,12 @@ public class MenuDeThiFragment extends Fragment {
         ApiService.apiservice.getDuLieuBD().enqueue(new Callback<List<DeThi>>() {
             @Override
             public void onResponse(Call<List<DeThi>> call, Response<List<DeThi>> response) {
-                for(DeThi dt:response.body()){
-                    deThis.add(dt);
+                if(response.body()!=null){
+                    for(DeThi dt:response.body()){
+                        deThis.add(dt);
+                    }
+                    adapter.notifyDataSetChanged();
                 }
-                adapter.notifyDataSetChanged();
             }
 
             @Override
