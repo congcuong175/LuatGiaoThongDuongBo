@@ -1,5 +1,7 @@
 package com.example.luatgiaothong;
 
+import static com.example.luatgiaothong.HomeFragment.db;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -31,24 +33,11 @@ public class MeoThiFragment extends Fragment {
     }
     RecyclerView rcvMeoThi;
     MeoThiApdater apdater;
-    ArrayList<MeoThi> meoThis=new ArrayList<>();
+    List<MeoThi> meoThis=new ArrayList<>();
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ApiService.apiservice.getDuLieuMeoThi().enqueue(new Callback<List<MeoThi>>() {
-            @Override
-            public void onResponse(Call<List<MeoThi>> call, Response<List<MeoThi>> response) {
-                for(MeoThi mt: response.body()){
-                    meoThis.add(mt);
-                }
-                apdater.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onFailure(Call<List<MeoThi>> call, Throwable t) {
-
-            }
-        });
+        meoThis=db.getAllMeoThi();
         rcvMeoThi=view.findViewById(R.id.rcv_meoThi);
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getActivity());
         rcvMeoThi.setLayoutManager(linearLayoutManager);

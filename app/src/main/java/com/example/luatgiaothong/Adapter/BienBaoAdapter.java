@@ -8,24 +8,23 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.airbnb.lottie.animation.content.Content;
 import com.example.luatgiaothong.Entity.DeThi;
 import com.example.luatgiaothong.R;
 
 import java.util.List;
 
-public class DethiAdapter extends BaseAdapter {
-    List<DeThi> deThiList;
+public class BienBaoAdapter extends BaseAdapter {
+    List<String> deThiList;
     private int layout;
     private Context context;
 
-    public DethiAdapter(List<DeThi> deThiList, int layout, Context context) {
+    public BienBaoAdapter(List<String> deThiList, int layout, Context context) {
         this.deThiList = deThiList;
         this.layout = layout;
         this.context = context;
     }
 
-    public void setData(List<DeThi> deThiList) {
+    public void setData(List<String> deThiList) {
         this.deThiList = deThiList;
         notifyDataSetChanged();
     }
@@ -47,16 +46,10 @@ public class DethiAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        LayoutInflater inflater= (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        view=inflater.inflate(layout,null);
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        view = inflater.inflate(layout, null);
 
-        ImageView avatarDeThi=view.findViewById(R.id.avatarDeThi);
-        TextView titleDeThi=view.findViewById(R.id.titleDeThi);
-        TextView tvTimeThi=view.findViewById(R.id.tvTimeThi);
-        TextView tvLamBai=view.findViewById(R.id.tvLamBai);
 
-        DeThi deThi=deThiList.get(i);
-        titleDeThi.setText("Đề số "+deThi.getMaDe());
         return view;
     }
 }

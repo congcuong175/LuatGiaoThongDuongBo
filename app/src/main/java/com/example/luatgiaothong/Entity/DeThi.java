@@ -5,15 +5,15 @@ import com.google.gson.annotations.SerializedName;
 public class DeThi {
     @SerializedName("MABODE")
     int maDe;
-    @SerializedName("THOIGIANTHI")
-    String thoiGian;
+    @SerializedName("GHICHU")
+    String ghiChu;
 
     public DeThi() {
     }
 
-    public DeThi(int maDe, String thoiGian) {
+    public DeThi(int maDe, String ghiChu) {
         this.maDe = maDe;
-        this.thoiGian = thoiGian;
+        this.ghiChu = ghiChu;
     }
 
     public int getMaDe() {
@@ -24,12 +24,12 @@ public class DeThi {
         this.maDe = maDe;
     }
 
-    public String getThoiGian() {
-        return thoiGian;
+    public String getGhiChu() {
+        return ghiChu;
     }
 
-    public void setThoiGian(String thoiGian) {
-        this.thoiGian = thoiGian;
+    public void setGhiChu(String thoiGian) {
+        this.ghiChu = thoiGian;
     }
 
 

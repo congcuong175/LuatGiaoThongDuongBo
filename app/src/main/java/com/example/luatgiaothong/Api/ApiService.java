@@ -1,7 +1,12 @@
 package com.example.luatgiaothong.Api;
 
+import com.airbnb.lottie.L;
+import com.example.luatgiaothong.Entity.CapNhat;
 import com.example.luatgiaothong.Entity.CauHoiEntity;
+import com.example.luatgiaothong.Entity.ChiTietDe;
+import com.example.luatgiaothong.Entity.DapAnEntity;
 import com.example.luatgiaothong.Entity.DeThi;
+import com.example.luatgiaothong.Entity.LoaiCH;
 import com.example.luatgiaothong.Entity.MeoThi;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -23,13 +28,25 @@ public interface ApiService {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
             .create(ApiService.class);
-    @GET("api/values/getALLCauHoi")
-    Call<List<CauHoiEntity>> getDuLieu();
+    @GET("api/CAUHOIs")
+    Call<List<CauHoiEntity>> getCH();
+    @GET("api/DAPANs")
+    Call<List<DapAnEntity>> getDA();
+    @GET("api/LOAICAUHOIs")
+    Call<List<LoaiCH>> getLCH();
+    @GET("api/CHITIETDEs")
+    Call<List<ChiTietDe>> getCTD();
+    @GET("api/CAPNHATs")
+    Call<CapNhat> getCN();
+
+
+    @GET("api/BODEs")
+    Call<List<DeThi>> getDuLieuBD();
+    @GET("api/CHITIETDEs/TaoDe")
+    Call<List<ChiTietDe>> TaoDe(@Query("bd")int bd);
+    @GET("api/MEOTHIs")
+    Call<List<MeoThi>> getDuLieuMeoThi();
     @GET("api/values/getCauHoiByBoDe")
     Call<List<CauHoiEntity>> getDuLieuByBoDe(@Query("id") int id);
 
-    @GET("api/bodes/getALLBode")
-    Call<List<DeThi>> getDuLieuBD();
-    @GET("api/MeoThis")
-    Call<List<MeoThi>> getDuLieuMeoThi();
 }

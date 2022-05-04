@@ -1,7 +1,9 @@
 package com.example.luatgiaothong;
 
 import static com.example.luatgiaothong.Home.layout;
+import static com.example.luatgiaothong.HomeFragment.db;
 import static com.example.luatgiaothong.MenuDeThiFragment.dethu;
+import static com.example.luatgiaothong.Common.Common.dialog;
 
 import android.os.Bundle;
 
@@ -32,8 +34,8 @@ import retrofit2.Response;
 
 
 public class HocLyThuyet extends Fragment {
-    LTCauHoiAdapter cauHoiAdapter;
-    ArrayList<CauHoiEntity> arrayList = new ArrayList<>();
+    public  LTCauHoiAdapter cauHoiAdapter;
+    List<CauHoiEntity> arrayList = new ArrayList<>();
     static RecyclerView recyclerView;
     public HocLyThuyet() {
         // Required empty public constructor
@@ -45,21 +47,9 @@ public class HocLyThuyet extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         cauHoiAdapter = new LTCauHoiAdapter(getActivity());
         layout.setVisibility(View.GONE);
+        arrayList=db.getBoDe();
         cauHoiAdapter.setData(arrayList);
-        ApiService.apiservice.getDuLieu().enqueue(new Callback<List<CauHoiEntity>>() {
-            @Override
-            public void onResponse(Call<List<CauHoiEntity>> call, Response<List<CauHoiEntity>> response) {
-                for (CauHoiEntity ch : response.body()) {
-                    arrayList.add(ch);
-                }
-                cauHoiAdapter.notifyDataSetChanged();
-            }
 
-            @Override
-            public void onFailure(Call<List<CauHoiEntity>> call, Throwable t) {
-
-            }
-        });
         recyclerView = view.findViewById(R.id.listCauLyThuyet);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
         recyclerView.setAdapter(cauHoiAdapter);

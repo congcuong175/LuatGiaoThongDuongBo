@@ -1,21 +1,46 @@
 package com.example.luatgiaothong.Entity;
 
-public class LoaiCH {
-    String maLCH;
-    String tenLCH;
-    String ghiChu;
+import com.google.gson.annotations.SerializedName;
 
-    public LoaiCH(String maLCH, String tenLCH, String ghiChu) {
+import java.util.ArrayList;
+import java.util.List;
+
+public class LoaiCH {
+    @SerializedName("MALCH")
+    int maLCH;
+    @SerializedName("TENLOAI")
+    String tenLCH;
+    @SerializedName("GHICHU")
+    String ghiChu;
+    List<CauHoiEntity> cauHoiEntityList;
+
+    public List<CauHoiEntity> getCauHoiEntityList() {
+        return cauHoiEntityList;
+    }
+
+    public void setCauHoiEntityList(List<CauHoiEntity> cauHoiEntityList) {
+        this.cauHoiEntityList = cauHoiEntityList;
+    }
+
+    public LoaiCH(int maLCH, String tenLCH, String ghiChu, List<CauHoiEntity> cauHoiEntityList) {
         this.maLCH = maLCH;
         this.tenLCH = tenLCH;
         this.ghiChu = ghiChu;
+        this.cauHoiEntityList = cauHoiEntityList;
     }
 
-    public String getMaLCH() {
+    public LoaiCH(int maLCH, String tenLCH, String ghiChu) {
+        this.maLCH = maLCH;
+        this.tenLCH = tenLCH;
+        this.ghiChu = ghiChu;
+        this.cauHoiEntityList=new ArrayList<>();
+    }
+
+    public int getMaLCH() {
         return maLCH;
     }
 
-    public void setMaLCH(String maLCH) {
+    public void setMaLCH(int maLCH) {
         this.maLCH = maLCH;
     }
 

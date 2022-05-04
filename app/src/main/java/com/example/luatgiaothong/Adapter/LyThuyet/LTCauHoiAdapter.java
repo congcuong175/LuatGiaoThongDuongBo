@@ -42,12 +42,12 @@ import java.util.List;
 
 public class LTCauHoiAdapter extends RecyclerView.Adapter<LTCauHoiAdapter.LTCauHoiViewHolder>{
     private Context mContext;
-    private ArrayList<CauHoiEntity> cauHoiEntities;
+    private List<CauHoiEntity> cauHoiEntities;
     public LTDapAnAdapter adapter;
     public LTCauHoiAdapter(Context mContext) {
         this.mContext = mContext;
     }
-    public void setData(ArrayList<CauHoiEntity> cauHoiEntities)
+    public void setData(List<CauHoiEntity> cauHoiEntities)
     {
         this.cauHoiEntities=cauHoiEntities;
         notifyDataSetChanged();
@@ -62,7 +62,6 @@ public class LTCauHoiAdapter extends RecyclerView.Adapter<LTCauHoiAdapter.LTCauH
     @Override
     public void onBindViewHolder(@NonNull LTCauHoiViewHolder holder, @SuppressLint("RecyclerView") int position) {
         CauHoiEntity cauHoiEntity=cauHoiEntities.get(position);
-
         if(cauHoiEntity==null){
             return;
         }
@@ -84,6 +83,14 @@ public class LTCauHoiAdapter extends RecyclerView.Adapter<LTCauHoiAdapter.LTCauH
                 showDiaglog();
             }
         });
+
+        for(DapAnEntity da: cauHoiEntity.getDapAnEntities()){
+            if(da.getKiemTra()){
+                if(da.getDapAnChoose()==1){
+                    holder.lnlout_giaothich.setVisibility(View.VISIBLE);;
+                }
+            }
+        }
     }
     public int getCauTraLoiDung(){
         int dem=0;
@@ -110,18 +117,21 @@ public class LTCauHoiAdapter extends RecyclerView.Adapter<LTCauHoiAdapter.LTCauH
     }
 
 
-    public class LTCauHoiViewHolder extends RecyclerView.ViewHolder {
+    public  class LTCauHoiViewHolder extends RecyclerView.ViewHolder {
         private TextView tv_CauHoi,tv_cauhoiso;
         private ImageView img_CauHoi;
         private RecyclerView list_CauTRL;
         private LinearLayout ln_bottom_sheet;
+        public  LinearLayout lnlout_giaothich;
         public LTCauHoiViewHolder(@NonNull View itemView) {
             super(itemView);
             tv_CauHoi=itemView.findViewById(R.id.tv_cauhoi);
             tv_cauhoiso=itemView.findViewById(R.id.tv_cauhoiso);
+            lnlout_giaothich=itemView.findViewById(R.id.lnlout_giaothich);
             img_CauHoi=itemView.findViewById(R.id.img_cauhoi);
             list_CauTRL=itemView.findViewById(R.id.lv_cautraloi);
             ln_bottom_sheet=itemView.findViewById(R.id.ln_bottom_sheet);
+            lnlout_giaothich.setVisibility(View.GONE);
 
         }
     }

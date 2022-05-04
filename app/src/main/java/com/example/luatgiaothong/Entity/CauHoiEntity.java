@@ -2,16 +2,18 @@ package com.example.luatgiaothong.Entity;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CauHoiEntity {
-    @SerializedName("MaCH")
+    @SerializedName("MACH")
     private int maCH;
-    @SerializedName("NoiDung")
+    @SerializedName("NOIDUNG")
     private String noiDung;
-    @SerializedName("HinhAnh")
+    @SerializedName("HINHANH")
     private String hinhAnh;
-    @SerializedName("DapAnEntities")
+    @SerializedName("MALCH")
+    private int maLCH;
     private List<DapAnEntity> dapAnEntities;
 
 
@@ -47,10 +49,29 @@ public class CauHoiEntity {
         this.dapAnEntities = dapAnEntities;
     }
 
+    public int getMaLCH() {
+        return maLCH;
+    }
+
+    public void setMaLCH(int maLCH) {
+        this.maLCH = maLCH;
+    }
+
     public CauHoiEntity(int maCH, String noiDung, String hinhAnh, List<DapAnEntity> dapAnEntities) {
         this.maCH = maCH;
         this.noiDung = noiDung;
         this.hinhAnh = hinhAnh;
         this.dapAnEntities = dapAnEntities;
+    }
+
+    public CauHoiEntity(int maCH, String noiDung, String hinhAnh, int maLCH) {
+        this.maCH = maCH;
+        this.noiDung = noiDung;
+        this.hinhAnh = hinhAnh;
+        this.maLCH = maLCH;
+    }
+
+    public CauHoiEntity() {
+        dapAnEntities=new ArrayList<>();
     }
 }

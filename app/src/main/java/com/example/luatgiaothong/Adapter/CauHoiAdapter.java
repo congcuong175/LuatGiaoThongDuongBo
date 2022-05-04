@@ -34,15 +34,16 @@ import com.squareup.picasso.Picasso;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 public class CauHoiAdapter extends RecyclerView.Adapter<CauHoiAdapter.CauHoiViewHolder>{
     private Context mContext;
-    private ArrayList<CauHoiEntity> cauHoiEntities;
+    private List<CauHoiEntity> cauHoiEntities;
     public DapAnAdapter adapter;
     public CauHoiAdapter(Context mContext) {
         this.mContext = mContext;
     }
-    public void setData(ArrayList<CauHoiEntity> cauHoiEntities)
+    public void setData(List<CauHoiEntity> cauHoiEntities)
     {
         this.cauHoiEntities=cauHoiEntities;
         notifyDataSetChanged();

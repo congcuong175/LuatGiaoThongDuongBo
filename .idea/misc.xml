@@ -5,20 +5,33 @@
       <map>
         <entry key="..\:/GitHub/app/src/main/res/drawable/bo2goc.xml" value="0.12" />
         <entry key="..\:/GitHub/app/src/main/res/drawable/bo2goctren.xml" value="0.129" />
+        <entry key="..\:/GitHub/app/src/main/res/drawable/bogoc.xml" value="0.1965" />
         <entry key="..\:/GitHub/app/src/main/res/drawable/botext.xml" value="0.12" />
         <entry key="..\:/GitHub/app/src/main/res/drawable/dialog_bg.xml" value="0.1185" />
+        <entry key="..\:/GitHub/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.121" />
+        <entry key="..\:/GitHub/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1965" />
         <entry key="..\:/GitHub/app/src/main/res/drawable/ic_menu_camera.xml" value="0.1185" />
         <entry key="..\:/GitHub/app/src/main/res/drawable/ic_traffic_jam.xml" value="0.129" />
         <entry key="..\:/GitHub/app/src/main/res/drawable/side_nav_bar.xml" value="0.145" />
         <entry key="..\:/GitHub/app/src/main/res/font/brawler.xml" value="0.28020833333333334" />
         <entry key="..\:/GitHub/app/src/main/res/layout/activity_display_man.xml" value="0.23233695652173914" />
         <entry key="..\:/GitHub/app/src/main/res/layout/activity_home.xml" value="0.16" />
-        <entry key="..\:/GitHub/app/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/layout/activity_maps.xml" value="0.10989583333333333" />
         <entry key="..\:/GitHub/app/src/main/res/layout/app_bar_display_man.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/layout/bottomsheet.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/layout/content_display_man.xml" value="0.2359375" />
-        <entry key="..\:/GitHub/app/src/main/res/layout/dialog_ketthucbaithi.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/dialog_capnhat.xml" value="0.4" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/dialog_ketthucbaithi.xml" value="0.2" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/fragment_biem_bao_cam.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/fragment_biem_bao_nguy_hiem_canh_bao.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/fragment_biem_chi_dan.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/fragment_bien_bao.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/fragment_bien_bao_cam.xml" value="0.2" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/fragment_bien_bao_nguy_hiem_canh_bao.xml" value="0.10989583333333333" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/fragment_bien_chi_dan.xml" value="0.10989583333333333" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/fragment_bien_hieu_lenh.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/fragment_bien_phu.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/layout/fragment_blank.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/layout/fragment_blank2.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/layout/fragment_gallery.xml" value="0.25" />
@@ -30,12 +43,15 @@
         <entry key="..\:/GitHub/app/src/main/res/layout/fragment_news.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/layout/fragment_slideshow.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/layout/fragment_thi.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/fragment_tra_cuu.xml" value="0.13425925925925927" />
         <entry key="..\:/GitHub/app/src/main/res/layout/imageadapter.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/layout/imagecustom.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/item_bien_bao.xml" value="0.4" />
         <entry key="..\:/GitHub/app/src/main/res/layout/item_cauhoi.xml" value="0.24583333333333332" />
         <entry key="..\:/GitHub/app/src/main/res/layout/item_cautraloi.xml" value="0.24583333333333332" />
         <entry key="..\:/GitHub/app/src/main/res/layout/item_dethi.xml" value="0.2" />
         <entry key="..\:/GitHub/app/src/main/res/layout/item_meothi.xml" value="0.25" />
+        <entry key="..\:/GitHub/app/src/main/res/layout/itemloaddata.xml" value="0.17407407407407408" />
         <entry key="..\:/GitHub/app/src/main/res/layout/nav_header_display_man.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/menu/activity_main_drawer.xml" value="0.25" />
         <entry key="..\:/GitHub/app/src/main/res/menu/display_man.xml" value="0.25" />

@@ -29,6 +29,12 @@
         <action
             android:id="@+id/action_HomeFragment_to_mapsFragment"
             app:destination="@id/mapsFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_bienBaoFragment"
+            app:destination="@id/bienBaoFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_traCuuFragment"
+            app:destination="@id/traCuuFragment" />
     </fragment>
     <fragment
         android:id="@+id/blankFragment2"
@@ -55,7 +61,11 @@
         android:id="@+id/thiFragment"
         android:name="com.example.luatgiaothong.ThiFragment"
         android:label="fragment_thi"
-        tools:layout="@layout/fragment_thi" />
+        tools:layout="@layout/fragment_thi" >
+        <action
+            android:id="@+id/action_thiFragment_to_menuDeThiFragment"
+            app:destination="@id/menuDeThiFragment" />
+    </fragment>
     <fragment
         android:id="@+id/hocLyThuyet"
         android:name="com.example.luatgiaothong.HocLyThuyet"
@@ -66,4 +76,14 @@
         android:name="com.example.luatgiaothong.MapsFragment"
         android:label="fragment_maps"
         tools:layout="@layout/fragment_maps" />
+    <fragment
+        android:id="@+id/bienBaoFragment"
+        android:name="com.example.luatgiaothong.BienBaoFragment"
+        android:label="fragment_bien_bao"
+        tools:layout="@layout/fragment_bien_bao" />
+    <fragment
+        android:id="@+id/traCuuFragment"
+        android:name="com.example.luatgiaothong.TraCuuFragment"
+        android:label="fragment_tra_cuu"
+        tools:layout="@layout/fragment_tra_cuu" />
 </navigation>

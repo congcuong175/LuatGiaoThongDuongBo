@@ -20,9 +20,10 @@ import com.example.luatgiaothong.Entity.DapAnEntity;
 import com.example.luatgiaothong.Entity.MeoThi;
 import com.example.luatgiaothong.R;
 import com.ramotion.foldingcell.FoldingCell;
-
 import java.util.ArrayList;
 import java.util.List;
+
+
 import static com.example.luatgiaothong.ThiFragment.click;
 public class LTDapAnAdapter extends RecyclerView.Adapter<LTDapAnAdapter.LTDapAnViewHolder> {
     List<DapAnEntity> dapAnEntityList;
@@ -43,12 +44,14 @@ public class LTDapAnAdapter extends RecyclerView.Adapter<LTDapAnAdapter.LTDapAnV
         if(dapAnEntity==null){
             return;
         }
+
         holder.textView.setText(dapAnEntity.getDapAN());
 
             if(dapAnEntity.getDapAnChoose()==1){
                 holder.rbSelect.setChecked(true);
                 if(dapAnEntity.getKiemTra()){
                     holder.textView.setTextColor(Color.RED);
+
                 }
                 else{
                     holder.textView.setTextColor(Color.BLACK);
@@ -71,6 +74,7 @@ public class LTDapAnAdapter extends RecyclerView.Adapter<LTDapAnAdapter.LTDapAnV
                             dapAnEntityList.get(i).setDapAnChoose(0);
                         }
                     }
+
 
                 notifyDataSetChanged();
             }

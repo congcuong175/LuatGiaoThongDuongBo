@@ -3,13 +3,34 @@ package com.example.luatgiaothong.Entity;
 import com.google.gson.annotations.SerializedName;
 
 public class DapAnEntity {
-    @SerializedName("MaDA")
+    @SerializedName("MADAPAN")
     private int maDA;
-    @SerializedName("DapAN")
+    @SerializedName("MACH")
+    private int maCH;
+    @SerializedName("DAPAN1")
     private String dapAN;
-    @SerializedName("KiemTra")
-    private Boolean kiemTra;
+    @SerializedName("KIEMTRA")
+    private boolean kiemTra;
+
     private int dapAnChoose;
+
+    public DapAnEntity(int maDA, String dapAN, boolean kiemTra, int maCH) {
+        this.maDA = maDA;
+        this.dapAN = dapAN;
+        this.kiemTra = kiemTra;
+        this.maCH = maCH;
+    }
+
+    public int getMaCH() {
+        return maCH;
+    }
+
+    public DapAnEntity() {
+    }
+
+    public void setMaCH(int maCH) {
+        this.maCH = maCH;
+    }
 
     public int getDapAnChoose() {
         return dapAnChoose;
@@ -35,15 +56,15 @@ public class DapAnEntity {
         this.dapAN = dapAN;
     }
 
-    public Boolean getKiemTra() {
+    public boolean getKiemTra() {
         return kiemTra;
     }
 
-    public void setKiemTra(Boolean kiemTra) {
+    public void setKiemTra(boolean kiemTra) {
         this.kiemTra = kiemTra;
     }
 
-    public DapAnEntity(int maDA, String dapAN, Boolean kiemTra) {
+    public DapAnEntity(int maDA, String dapAN, boolean kiemTra) {
         this.maDA = maDA;
         this.dapAN = dapAN;
         this.kiemTra = kiemTra;

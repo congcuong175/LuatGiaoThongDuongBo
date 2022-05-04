@@ -79,7 +79,6 @@ public class DapAnAdapter extends RecyclerView.Adapter<DapAnAdapter.DapAnViewHol
                     }
                     notifyDataSetChanged();
                 }
-
             }
         });
     }

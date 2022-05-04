@@ -3,11 +3,13 @@ package com.example.luatgiaothong;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearSnapHelper;
@@ -44,14 +46,16 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.example.luatgiaothong.HomeFragment.db;
 import static com.example.luatgiaothong.MenuDeThiFragment.dethu;
+import static com.example.luatgiaothong.Common.Common.dialog;
 
 public class ThiFragment extends Fragment {
     CauHoiAdapter cauhoiAdapter;
     TextView tv_ketthucbaithi, tv_tieude, tv_time;
     public static int click = 0;
     static RecyclerView recyclerView;
-    ArrayList<CauHoiEntity> arrayList = new ArrayList<>();
+    List<CauHoiEntity> arrayList = new ArrayList<>();
 
     CountDownTimer countDownTimer;
 
@@ -77,23 +81,7 @@ public class ThiFragment extends Fragment {
         tv_tieude.setText("Đề " + dethu);
         tv_time = view.findViewById(R.id.tv_time);
         cauhoiAdapter = new CauHoiAdapter(getActivity());
-        cauhoiAdapter.setData(arrayList);
         click = 1;
-        ApiService.apiservice.getDuLieuByBoDe(dethu).enqueue(new Callback<List<CauHoiEntity>>() {
-            @Override
-            public void onResponse(Call<List<CauHoiEntity>> call, Response<List<CauHoiEntity>> response) {
-                for (CauHoiEntity ch : response.body()) {
-                    arrayList.add(ch);
-                }
-                cauhoiAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onFailure(Call<List<CauHoiEntity>> call, Throwable t) {
-                Log.e("Lỗi gì đó", t.toString());
-                Toast.makeText(getActivity(), "Server Lỗi", Toast.LENGTH_SHORT).show();
-            }
-        });
         countDownTimer = new CountDownTimer(time, 1000) {
             @Override
             public void onTick(long l) {
@@ -105,7 +93,30 @@ public class ThiFragment extends Fragment {
                 showDiaglog();
             }
         };
+        arrayList= db.getBoDe(dethu);
+        cauhoiAdapter.setData(arrayList);
         countDownTimer.start();
+//        ApiService.apiservice.getDuLieuByBoDe(dethu).enqueue(new Callback<List<CauHoiEntity>>() {
+//            @Override
+//            public void onResponse(Call<List<CauHoiEntity>> call, Response<List<CauHoiEntity>> response) {
+//                if(response.body()!=null){
+//
+//                    for (CauHoiEntity ch : response.body()) {
+//                        arrayList.add(ch);
+//                    }
+//                    cauhoiAdapter.notifyDataSetChanged();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<CauHoiEntity>> call, Throwable t) {
+//                Log.e("Lỗi gì đó", t.toString());
+//                dialog.dismiss();
+//                Toast.makeText(getActivity(), "Server Lỗi", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
+
 
         tv_ketthucbaithi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -163,23 +174,9 @@ public class ThiFragment extends Fragment {
             public void onClick(View view) {
                 click = 1;
                 arrayList.clear();
-                ApiService.apiservice.getDuLieuByBoDe(dethu).enqueue(new Callback<List<CauHoiEntity>>() {
-                    @Override
-                    public void onResponse(Call<List<CauHoiEntity>> call, Response<List<CauHoiEntity>> response) {
-                        for (CauHoiEntity ch : response.body()) {
-                            arrayList.add(ch);
-                        }
-                        cauhoiAdapter.notifyDataSetChanged();
-                        recyclerView.smoothScrollToPosition(0);
-                    }
-
-                    @Override
-                    public void onFailure(Call<List<CauHoiEntity>> call, Throwable t) {
-                        Log.e("Lỗi gì đó", t.toString());
-                        Toast.makeText(getActivity(), "Server Lỗi", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
+                arrayList=db.getBoDe(dethu);
+                cauhoiAdapter.setData(arrayList);
+                recyclerView.smoothScrollToPosition(0);
                 countDownTimer.start();
                 dialog.hide();
             }

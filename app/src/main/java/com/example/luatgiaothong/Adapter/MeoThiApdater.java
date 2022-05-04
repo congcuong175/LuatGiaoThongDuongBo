@@ -14,16 +14,17 @@ import com.example.luatgiaothong.R;
 import com.ramotion.foldingcell.FoldingCell;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MeoThiApdater extends RecyclerView.Adapter<MeoThiApdater.MeoThiViewHolder> {
     private Context mContext;
-    private ArrayList<MeoThi> meoThis;
+    private List<MeoThi> meoThis;
 
     public MeoThiApdater(Context mContext) {
         this.mContext = mContext;
 
     }
-    public void setData(ArrayList<MeoThi> meos)
+    public void setData(List<MeoThi> meos)
     {
         this.meoThis=meos;
         notifyDataSetChanged();
